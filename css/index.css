@@ -1,0 +1,138 @@
+body{
+	background: #fafafa;
+}
+
+.wrap{
+	width: 100%;
+	height: 100%;
+}
+
+.topNav{
+	width: 100%;
+	height: 40px;
+	background: #dc4c3f;
+}
+
+.topNav .title{
+	width: 1000px;
+	height: 40px;
+	margin: auto;
+	font-size: 18px;
+	line-height: 40px;
+	color: #fff;
+}
+
+.InputContent{
+	width: 1000px;
+	margin: auto;
+}
+
+.InputContent h3{
+	font-size: 16px;
+	line-height: 50px;
+}
+
+.inPutBox{
+	width: 100%;
+	height: 26px;
+	font-size: 14px;
+}
+
+.inPutMessage{
+	margin-top: 15px;
+}
+
+.inPutMessage span{
+	font-size: 14px;
+	color: #dc4c3f;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+.messageCont{
+	display: inline-block;
+	vertical-align: middle;
+	color: #919191;
+	font-size: 14px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.inPutMessage .noRenwu{
+	margin-left: 520px;
+}
+
+.inPutMessage .onclick{
+	padding: 3px 20px;
+	border: 1px solid #919191;
+}
+
+.layout-list{
+	width: 1000px;
+	margin: 20px auto;
+}
+
+.layout-list h3{
+	font-size: 16px;
+	line-height: 50px;
+}
+
+.noTip{
+	width: 980px;
+	background: #fff;
+	padding: 10px;
+	display: block;
+	border-bottom: 1px solid #999;
+}
+
+.todo{
+	padding: 10px;
+	background: #fff;
+	border-bottom: 1px solid #e6e6e6;
+	position: relative;
+}
+
+.todo .view{
+	position: relative;
+}
+
+.todo .toggle{
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+
+.todo label{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 14px;
+}
+
+.listNo label{
+	color: #E6E6E6;
+	text-decoration: line-through;
+}
+
+.btn-exit{
+	display: block;
+	position: absolute;
+	right: 10px;
+	top: 0px;
+	margin: auto;
+	font-size: 18px;
+}
+
+.edit{
+	position: absolute;
+	top: 10px;
+	left: 45px;
+	display: none;
+}
+
+.showEdit .edit{
+	display: block;
+}
