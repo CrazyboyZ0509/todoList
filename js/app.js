@@ -1,11 +1,22 @@
-var list = [
-	/*{
+/*var list = [
+	{
 		title : "qwqwqw"
 	},
 	{
 		title : "wqwqwqw"
-	}*/
-]
+	}
+]*/
+
+var store = {
+	save(key,value){
+		localStorage.setItem(key,JSON.stringify(value));
+	},
+	fetch(key){
+		return JSON.parse(localStorage.getItem(key)) || [];
+	}
+}
+
+var list = store.fetch( "newClass");
 
 new Vue({
 	el: ".wrap",
@@ -14,6 +25,14 @@ new Vue({
 		todo:"",
 		editTodos:'',
 		editBefor:''
+	},
+	watch:{
+		list:{
+			handler:function(){
+				store.save("newClass",this.list);
+			},
+			deep:true
+		}
 	},
 	methods: {
 		addTodo(ev) { //添加任务
