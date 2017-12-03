@@ -22,16 +22,16 @@
 				/>
 				<div class="inPutMessage" v-show="list.length">
 					<span>{{noCheckedLen}}个任务未完成</span>
-					<div class="messageCont noRenwu onclick">所有任务</div>
-					<div class="messageCont noFinish">未完成任务</div>
-					<div class="messageCont Finish">完成任务</div>
+					<a href="#all" class="messageCont noRenwu onclick">所有任务</a>
+					<a href="#unfinish" class="messageCont noFinish">未完成任务</a>
+					<a href="#finish" class="messageCont Finish">完成任务</a>
 				</div>
 			</div>
 			<div class="layout-list">
 				<h3>任务列表：</h3>
 				<span class="noTip" v-show="!list.length">还没有添加任何任务</span>
 				<ul class="listCont">
-					<li class="todo" v-for="item in list" v-bind:class="{listNo:item.isCheck,showEdit:item === editTodos}">
+					<li class="todo" v-for="item in filteredList" v-bind:class="{listNo:item.isCheck,showEdit:item === editTodos}">
 						<div class="view">
 							<input type="checkbox" class="toggle" v-model="item.isCheck" />
 							<label @dblclick="enterTodo(item)">{{ item.title }}</label>

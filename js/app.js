@@ -18,13 +18,30 @@ var store = {
 
 var list = store.fetch( "newClass");
 
-new Vue({
+var filter = {
+	all:function(){
+		return list;
+	},
+	finish:function(){
+		return list.filter(function(item){
+			return item.isCheck;
+		})
+	},
+	unfinish:function(){
+		return list.filter(function(item){
+			return !item.isCheck;
+		})
+	}
+}
+
+var vm = new Vue({
 	el: ".wrap",
 	data: {
 		list: list,
 		todo:"",
 		editTodos:'',
-		editBefor:''
+		editBefor:'',
+		visibility:"all"
 	},
 	watch:{
 		list:{
@@ -74,6 +91,21 @@ new Vue({
 			return this.list.filter(function(item){
 				return !item.isCheck;
 			}).length
+		},
+		filteredList:function(){
+			
+			return filter[this.visibility] ? filter[this.visibility](list) : list;
+			
 		}
 	}
 });
+
+function watchHashChange(){
+	var hash = window.location.hash.slice(1);
+	
+	vm.visibility = hash;
+}
+
+watchHashChange();
+
+window.addEventListener("hashchange",watchHashChange);
